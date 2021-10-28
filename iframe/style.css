@@ -1,0 +1,8 @@
+#gpay-button {
+    display: none;
+}
+
+#gpay-button.available {
+    display: unset;
+}
+
