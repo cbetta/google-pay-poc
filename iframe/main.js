@@ -21,7 +21,8 @@ const baseCardPaymentMethod = {
   type: 'CARD',
   parameters: {
     allowedAuthMethods: allowedCardAuthMethods,
-    allowedCardNetworks: allowedCardNetworks
+    allowedCardNetworks: allowedCardNetworks,
+    billingAddressRequired: true
   }
 }
 
@@ -35,6 +36,7 @@ isReadyToPayRequest.allowedPaymentMethods = [baseCardPaymentMethod]
 
 const paymentDataRequest = Object.assign({}, baseRequest)
 paymentDataRequest.allowedPaymentMethods = [cardPaymentMethod]
+paymentDataRequest.shippingAddressRequired = true
 paymentDataRequest.transactionInfo = {
   totalPriceStatus: 'FINAL',
   totalPrice: '123.45',
